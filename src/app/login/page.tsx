@@ -12,7 +12,7 @@ const loginSchema = Yup.object().shape({
     .email('Invalid email address')
     .required('Email is required'),
   password: Yup.string()
-    .min(6, 'Password must be at least 6 characters')
+    .min(8, 'Password must be at least 8 characters')
     .required('Password is required')
     .matches(/[A-Z]/, "Password must contain at least one uppercase letter")
     .matches(/[a-z]/, "Password must contain at least one lowercase letter")
@@ -51,7 +51,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex flex-col relative font-sans overflow-hidden">
       
-      {/* 1. TOP SECTION: Gaming Image */}
+      {/* 1. TOP SECTION: Image */}
       <div className="relative h-[58vh] w-full">
         {/* Background Image */}
         <div 
@@ -122,9 +122,9 @@ export default function LoginPage() {
                     name="email"
                     type="email"
                     className="appearance-none block w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 placeholder-gray-400 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent sm:text-sm transition-all"
-                    placeholder="abdulb7772@gmail.com"
+                    placeholder="example@xyz.com"
                   />
-                  <ErrorMessage name="email" component="p" className="mt-1 text-sm text-red-300 pl-1" />
+                  <ErrorMessage name="email" component="p" className="mt-1 text-sm text-red-500 pl-1" />
                 </div>
 
                 {/* Password Field */}
@@ -139,25 +139,18 @@ export default function LoginPage() {
                     className="appearance-none block w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 placeholder-gray-400 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent sm:text-sm transition-all"
                     placeholder="••••••••"
                   />
-                  <ErrorMessage name="password" component="p" className="mt-1 text-sm text-red-300 pl-1" />
+                  <ErrorMessage name="password" component="p" className="mt-1 text-sm text-red-500 pl-1" />
                 </div>
 
                 {/* Remember Me & Forgot Password */}
                 <div className="flex items-center justify-between mt-2">
                   <div className="flex items-center">
-                    <input
-                      id="remember-me"
-                      name="remember-me"
-                      type="checkbox"
-                      className="h-4 w-4 text-red-600 focus:ring-red-500 border-gray-500 rounded bg-gray-700/50"
-                    />
-                    <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-200">
-                      Remember me
-                    </label>
+                    
+                    
                   </div>
 
                   <div className="text-sm">
-                    <a href="#" className="font-medium text-gray-300 hover:text-white transition-colors">
+                    <a href="#" className="font-medium text-blue-400 hover:text-white transition-colors">
                       Forgot your password?
                     </a>
                   </div>

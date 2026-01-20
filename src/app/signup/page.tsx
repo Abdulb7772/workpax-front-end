@@ -2,7 +2,6 @@
 
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { signIn } from 'next-auth/react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { toast } from 'react-toastify';
@@ -19,10 +18,8 @@ const signupSchema = Yup.object().shape({
    email: Yup.string()
       .email('Invalid email address')
       .required('Email is required'),
-    teamId: Yup.string()
-      .required('Please select a team'),
     password: Yup.string()
-      .min(6, 'Password must be at least 6 characters')
+      .min(8, 'Password must be at least 8 characters')
       .required('Password is required')
       .matches(
         /[A-Z]/,
@@ -47,30 +44,10 @@ const signupSchema = Yup.object().shape({
 
 export default function SignupPage() {
   const router = useRouter();
-  const [teams, setTeams] = useState<any[]>([]);
-  const [loadingTeams, setLoadingTeams] = useState(true);
-
-  useEffect(() => {
-    fetchTeams();
-  }, []);
-
-  const fetchTeams = async () => {
-    try {
-      setLoadingTeams(true);
-      const response = await fetch('http://localhost:5000/api/teams/public');
-      if (response.ok) {
-        const data = await response.json();
-        setTeams(data.data || []);
-      }
-    } catch (error) {
-      console.error('Failed to fetch teams:', error);
-    } finally {
-      setLoadingTeams(false);
-    }
-  };
+ 
 
   const handleSubmit = async (
-    values: { name: string; email: string; teamId: string; password: string; confirmPassword: string },
+    values: { name: string; email: string; password: string; confirmPassword: string },
     { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }
   ) => {
     try {
@@ -84,7 +61,6 @@ export default function SignupPage() {
           name: values.name,
           email: values.email,
           role: 'member', // Default role is member
-          teamId: values.teamId,
           password: values.password,
         }),
       });
@@ -159,7 +135,7 @@ export default function SignupPage() {
           </div>
 
           <Formik
-            initialValues={{ name: '', email: '', teamId: '', password: '', confirmPassword: '' }}
+            initialValues={{ name: '', email:'', password: '', confirmPassword: '' }}
             validationSchema={signupSchema}
             onSubmit={handleSubmit}
           >
@@ -184,7 +160,7 @@ export default function SignupPage() {
                       }
                     }}
                   />
-                  <ErrorMessage name="name" component="p" className="mt-1 text-sm text-red-300 pl-1" />
+                  <ErrorMessage name="name" component="p" className="mt-1 text-sm text-red-500 pl-1" />
                 </div>
 
                 {/* Email Field */}
@@ -200,35 +176,10 @@ export default function SignupPage() {
                     className="appearance-none block w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 placeholder-gray-400 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent sm:text-sm transition-all"
                     placeholder="example@xyz.com"
                   />
-                  <ErrorMessage name="email" component="p" className="mt-1 text-sm text-red-300 pl-1" />
+                  <ErrorMessage name="email" component="p" className="mt-1 text-sm text-red-500 pl-1" />
                 </div>
 
-                {/* Team Field */}
-                <div>
-                  <label htmlFor="teamId" className="block text-xs font-medium text-gray-200 mb-1 ml-1 uppercase tracking-wider">
-                    Select Team
-                  </label>
-                  <Field
-                    as="select"
-                    id="teamId"
-                    name="teamId"
-                    className="appearance-none block w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent sm:text-sm transition-all cursor-pointer"
-                  >
-                    <option value="">Select a team</option>
-                    {loadingTeams ? (
-                      <option value="" disabled>Loading teams...</option>
-                    ) : teams.length === 0 ? (
-                      <option value="" disabled>No teams available</option>
-                    ) : (
-                      teams.map((team) => (
-                        <option key={team._id} value={team._id}>
-                          {team.name} ({team.organization.name})
-                        </option>
-                      ))
-                    )}
-                  </Field>
-                  <ErrorMessage name="teamId" component="p" className="mt-1 text-sm text-red-300 pl-1" />
-                </div>
+                  
 
                 {/* Password Field */}
                 <div>
@@ -243,7 +194,7 @@ export default function SignupPage() {
                     className="appearance-none block w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 placeholder-gray-400 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent sm:text-sm transition-all"
                     placeholder="••••••••"
                   />
-                  <ErrorMessage name="password" component="p" className="mt-1 text-sm text-red-300 pl-1" />
+                  <ErrorMessage name="password" component="p" className="mt-1 text-sm text-red-500 pl-1" />
                 </div>
 
                 {/* Confirm Password Field */}
@@ -259,7 +210,7 @@ export default function SignupPage() {
                     className="appearance-none block w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 placeholder-gray-400 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent sm:text-sm transition-all"
                     placeholder="••••••••"
                   />
-                  <ErrorMessage name="confirmPassword" component="p" className="mt-1 text-sm text-red-300 pl-1" />
+                  <ErrorMessage name="confirmPassword" component="p" className="mt-1 text-sm text-red-500 pl-1" />
                 </div>
 
                 {/* Terms Checkbox */}
@@ -273,7 +224,7 @@ export default function SignupPage() {
                   />
                   <label htmlFor="terms" className="ml-2 block text-sm text-gray-200">
                     I agree to the{' '}
-                    <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                    <a href="#" className="text-blue-400 font-bold text-sm hover:text-white transition-colors">
                       Terms and Conditions
                     </a>
                   </label>

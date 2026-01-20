@@ -12,18 +12,13 @@ import {
   useSensors,
   closestCorners,
 } from '@dnd-kit/core';
-import {
-  SortableContext,
-  arrayMove,
-  verticalListSortingStrategy,
-} from '@dnd-kit/sortable';
+
 import { toast } from 'react-toastify';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { axiosInstance } from '@/lib/axios';
 import { useAuth } from '@/lib/useAuth';
 import type { Task } from '@/types/task';
-import TaskCard from '@/components/board/TaskCard';
 import BoardColumn from '@/components/board/BoardColumn';
 import TaskModal from '@/components/TaskModal';
 
@@ -47,7 +42,6 @@ const COLUMNS = [
 
 export default function BoardPage() {
   const router = useRouter();
-  const auth = useAuth();
   const [projects, setProjects] = useState<Project[]>([]);
   const [selectedProjectId, setSelectedProjectId] = useState<string>('');
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -226,13 +220,13 @@ export default function BoardPage() {
 
   if (loading && projects.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 p-8">
+      <div className="min-h-screen bg-linear-to-br from-purple-50 via-blue-50 to-pink-50 p-8">
         <div className="max-w-7xl mx-auto">
           <Skeleton height={40} width={200} className="mb-6" />
           <Skeleton height={50} width={300} className="mb-8" />
           <div className="flex gap-4 overflow-x-auto">
             {[1, 2, 3, 4, 5].map((i) => (
-              <div key={i} className="flex-shrink-0 w-80">
+              <div key={i} className="shrink-0 w-80">
                 <Skeleton height={400} />
               </div>
             ))}
@@ -243,7 +237,7 @@ export default function BoardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 p-8">
+    <div className="min-h-screen bg-linear-to-br from-purple-50 via-blue-50 to-pink-50 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -314,7 +308,12 @@ export default function BoardPage() {
             <DragOverlay>
               {activeTask ? (
                 <div className="rotate-3 opacity-80">
-                  <TaskCard task={activeTask} getPriorityColor={getPriorityColor} getStatusBorderColor={getStatusBorderColor} />
+                  <div className="bg-white p-4 rounded-lg shadow-lg border-l-4" style={{ borderColor: getStatusBorderColor(activeTask.status) }}>
+                    <h3 className="font-semibold text-gray-900 mb-2">{activeTask.title}</h3>
+                    <span className={`text-xs px-2 py-1 rounded border ${getPriorityColor(activeTask.priority)}`}>
+                      {activeTask.priority}
+                    </span>
+                  </div>
                 </div>
               ) : null}
             </DragOverlay>

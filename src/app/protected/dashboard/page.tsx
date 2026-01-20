@@ -126,7 +126,7 @@ export default function DashboardPage() {
 
   if (status === "loading" || loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 p-4 sm:p-8">
+      <div className="min-h-screen bg-linear-to-br from-purple-50 via-blue-50 to-pink-50 p-4 sm:p-8">
         <div className="max-w-7xl mx-auto space-y-8">
           {/* Welcome Header Skeleton */}
           <div className="bg-white rounded-2xl shadow-xl p-8">
@@ -175,7 +175,7 @@ export default function DashboardPage() {
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats?.totalUsers !== null && (
-            <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform">
+            <div className="bg-linear-to-br from-blue-500 to-blue-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-blue-100 text-sm font-medium">Total Users</p>
@@ -190,7 +190,7 @@ export default function DashboardPage() {
             </div>
           )}
 
-          <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform">
+          <div className="bg-linear-to-br from-green-500 to-green-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-green-100 text-sm font-medium">Active Projects</p>
@@ -204,7 +204,7 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-yellow-500 to-orange-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform">
+          <div className="bg-linear-to-br from-yellow-500 to-orange-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-yellow-100 text-sm font-medium">Pending Tasks</p>
@@ -218,7 +218,7 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform">
+          <div className="bg-linear-to-br from-purple-500 to-pink-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-purple-100 text-sm font-medium">Completed</p>
@@ -335,7 +335,7 @@ export default function DashboardPage() {
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Your Task Summary</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6 border border-blue-200">
+            <div className="bg-linear-to-br from-blue-50 to-blue-100 rounded-lg p-6 border border-blue-200">
               <div className="flex items-center justify-between mb-2">
                 <p className="text-sm font-medium text-blue-700">Total Tasks</p>
                 <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
@@ -345,7 +345,7 @@ export default function DashboardPage() {
               <p className="text-3xl font-bold text-blue-900">{stats?.totalTasks || 0}</p>
             </div>
             
-            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-6 border border-green-200">
+            <div className="bg-linear-to-br from-green-50 to-green-100 rounded-lg p-6 border border-green-200">
               <div className="flex items-center justify-between mb-2">
                 <p className="text-sm font-medium text-green-700">Completed</p>
                 <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
@@ -355,7 +355,7 @@ export default function DashboardPage() {
               <p className="text-3xl font-bold text-green-900">{stats?.completedTasks || 0}</p>
             </div>
             
-            <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-lg p-6 border border-yellow-200">
+            <div className="bg-linear-to-br from-yellow-50 to-yellow-100 rounded-lg p-6 border border-yellow-200">
               <div className="flex items-center justify-between mb-2">
                 <p className="text-sm font-medium text-yellow-700">Pending</p>
                 <svg className="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">

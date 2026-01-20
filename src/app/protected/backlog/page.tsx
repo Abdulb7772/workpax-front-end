@@ -120,7 +120,7 @@ export default function BacklogPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen bg-linear-to-br from-purple-50 via-blue-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <Skeleton height={40} width={200} className="mb-8" />
           <div className="space-y-8">
@@ -134,7 +134,7 @@ export default function BacklogPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-linear-to-br from-purple-50 via-blue-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -157,7 +157,7 @@ export default function BacklogPage() {
             {projects.map((project) => (
               <div key={project._id} className="bg-white rounded-2xl shadow-xl overflow-hidden">
                 {/* Project Header */}
-                <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-6 text-white">
+                <div className="bg-linear-to-r from-indigo-600 to-purple-600 p-6 text-white">
                   <div className="flex items-center justify-between mb-3">
                     <h2 
                       className="text-2xl font-bold cursor-pointer hover:underline"
@@ -195,7 +195,7 @@ export default function BacklogPage() {
                       return (
                         <div
                           key={task._id}
-                          className={`bg-gradient-to-br from-gray-50 to-white border-2 rounded-xl p-5 hover:shadow-lg transition-all ${
+                          className={`bg-linear-to-br from-gray-50 to-white border-2 rounded-xl p-5 hover:shadow-lg transition-all ${
                             isOverdue ? 'border-red-300 bg-red-50/30' : 'border-gray-200'
                           }`}
                         >
@@ -248,7 +248,7 @@ export default function BacklogPage() {
                             {/* Move to Todo Button */}
                             <button
                               onClick={(e) => handleMoveToTodo(task._id, e)}
-                              className="w-full mt-3 px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all font-medium text-sm flex items-center justify-center gap-2"
+                              className="w-full mt-3 px-4 py-2 bg-linear-to-r from-blue-600 to-indigo-600 text-white rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all font-medium text-sm flex items-center justify-center gap-2"
                             >
                               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

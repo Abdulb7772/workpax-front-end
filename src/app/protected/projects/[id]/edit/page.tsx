@@ -39,8 +39,6 @@ interface Project {
   startDate?: string;
   endDate?: string;
 }
-  endDate?: string;
-}
 
 export default function EditProjectPage() {
   const router = useRouter();
