@@ -120,7 +120,7 @@ export default function EditProjectPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen bg-linear-to-br from-purple-50 via-blue-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <Skeleton height={36} width={200} className="mb-2" />
@@ -147,7 +147,7 @@ export default function EditProjectPage() {
 
   if (!project) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50">
+      <div className="flex items-center justify-center min-h-screen bg-linear-to-br from-purple-50 via-blue-50 to-pink-50">
         <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md">
           <div className="text-red-500 text-center">
             <p className="text-xl font-semibold mb-2">Project not found</p>
@@ -166,7 +166,7 @@ export default function EditProjectPage() {
   // If manager doesn't have permission to edit this project
   if (auth.isManager && !canEdit) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50">
+      <div className="flex items-center justify-center min-h-screen bg-linear-to-br from-purple-50 via-blue-50 to-pink-50">
         <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md">
           <div className="text-center">
             <div className="text-yellow-500 text-5xl mb-4">⚠️</div>
@@ -188,7 +188,7 @@ export default function EditProjectPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-linear-to-br from-purple-50 via-blue-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto">
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <div className="mb-8 flex items-center justify-between">
@@ -380,7 +380,7 @@ export default function EditProjectPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="flex-1 py-3 px-6 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:from-purple-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed font-semibold"
+                    className="flex-1 py-3 px-6 bg-linear-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:from-purple-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed font-semibold"
                   >
                     {isSubmitting ? 'Saving...' : 'Save Changes'}
                   </button>

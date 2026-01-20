@@ -29,8 +29,8 @@ export default function YourWorkPage() {
     tasks.filter((task) => task.status === status);
 
   return (
-    <div className="max-w-5xl mx-auto p-8 bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 min-h-screen">
-      <h1 className="text-3xl font-extrabold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">Your Work</h1>
+    <div className="max-w-5xl mx-auto p-8 bg-linear-to-br from-purple-50 via-blue-50 to-pink-50 min-h-screen">
+      <h1 className="text-3xl font-extrabold mb-8 text-transparent bg-clip-text bg-linear-to-r from-purple-600 to-blue-600">Your Work</h1>
       {loading ? (
         <div className="text-lg text-gray-600">Loading...</div>
       ) : (

@@ -182,7 +182,7 @@ export default function TaskModal({ isOpen, onClose, taskId, onTaskUpdated }: Ta
     <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 text-white flex items-center justify-between">
+        <div className="bg-linear-to-r from-blue-600 to-indigo-600 p-6 text-white flex items-center justify-between">
           <h2 className="text-2xl font-bold">Task Details</h2>
           <button
             onClick={onClose}
@@ -390,7 +390,7 @@ export default function TaskModal({ isOpen, onClose, taskId, onTaskUpdated }: Ta
                   comments.map((comment) => (
                     <div key={comment._id} className="bg-gray-50 rounded-lg p-4">
                       <div className="flex items-start gap-3">
-                        <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-medium flex-shrink-0">
+                        <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-medium shrink-0">
                           {comment.user.name.charAt(0).toUpperCase()}
                         </div>
                         <div className="flex-1">
@@ -433,7 +433,7 @@ export default function TaskModal({ isOpen, onClose, taskId, onTaskUpdated }: Ta
                             <div className="mt-3 space-y-3 pl-4 border-l-2 border-gray-300">
                               {comment.replies.map((reply) => (
                                 <div key={reply._id} className="flex items-start gap-2">
-                                  <div className="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-medium text-sm flex-shrink-0">
+                                  <div className="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-medium text-sm shrink-0">
                                     {reply.user.name.charAt(0).toUpperCase()}
                                   </div>
                                   <div className="flex-1">

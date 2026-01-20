@@ -1,9 +1,5 @@
 "use client";
 
-
-
-
-
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { updateUsername, updatePassword, updateEmail, getCurrentUser } from "@/lib/api";

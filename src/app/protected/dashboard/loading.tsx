@@ -3,7 +3,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 
 export default function Loading() {
   return (
-    <div className="p-8 bg-gradient-to-br from-purple-50 to-blue-50 min-h-screen">
+    <div className="p-8 bg-linear-to-br from-purple-50 to-blue-50 min-h-screen">
       <div className="max-w-7xl mx-auto">
         <Skeleton height={40} width={300} className="mb-8" />
         

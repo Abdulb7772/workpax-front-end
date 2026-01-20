@@ -25,6 +25,9 @@ interface ExtendedUser {
   email?: string | null;
   image?: string | null;
   role?: string | null;
+  isVerified?: boolean;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export const useAuth = () => {

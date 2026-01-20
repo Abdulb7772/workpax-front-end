@@ -197,7 +197,7 @@ export default function BoardPage() {
     return colors[priority] || 'bg-gray-100 text-gray-700';
   };
 
-  const handleTaskDoubleClick = (taskId: string) => {
+  const handleTaskClick = (taskId: string) => {
     setSelectedTaskId(taskId);
     setIsModalOpen(true);
   };
@@ -300,7 +300,7 @@ export default function BoardPage() {
                   tasks={getTasksByStatus(column.id)}
                   getPriorityColor={getPriorityColor}
                   getStatusBorderColor={getStatusBorderColor}
-                  onTaskDoubleClick={handleTaskDoubleClick}
+                  onTaskClick={handleTaskClick}
                 />
               ))}
             </div>

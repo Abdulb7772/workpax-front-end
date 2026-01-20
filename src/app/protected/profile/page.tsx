@@ -3,14 +3,25 @@
 import { useSession } from "next-auth/react";
 import { useAuth } from "@/lib/useAuth";
 
+interface UserProfile {
+  id?: string;
+  name?: string | null;
+  email?: string | null;
+  image?: string | null;
+  role?: string | null;
+  isVerified?: boolean;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
 export default function ProfilePage() {
   const { data: session } = useSession();
   const { user: authUser } = useAuth();
-  const user = session?.user || authUser;
+  const user = (session?.user || authUser) as UserProfile | undefined;
 
   return (
-    <div className="max-w-xl mx-auto p-8 bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 min-h-screen">
-      <h1 className="text-3xl font-extrabold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">Profile Information</h1>
+    <div className="max-w-xl mx-auto p-8 bg-linear-to-br from-purple-50 via-blue-50 to-pink-50 min-h-screen">
+      <h1 className="text-3xl font-extrabold mb-8 text-transparent bg-clip-text bg-linear-to-r from-purple-600 to-blue-600">Profile Information</h1>
       <div className="bg-white/80 rounded-xl shadow-lg p-8 border-l-8 border-blue-400">
         {user ? (
           <>
@@ -46,12 +57,7 @@ export default function ProfilePage() {
                 <span className="text-lg font-bold text-gray-800">{new Date(user.updatedAt).toLocaleDateString()}</span>
               </div>
             )}
-            {user.image && (
-              <div className="mb-6 flex flex-col items-start">
-                <span className="block text-gray-500 font-semibold mb-1">Profile Image</span>
-                <img src={user.image} alt="Profile" className="w-24 h-24 rounded-full border-2 border-blue-300 object-cover" />
-              </div>
-            )}
+            
           </>
         ) : (
           <div className="text-gray-500">No user information found.</div>

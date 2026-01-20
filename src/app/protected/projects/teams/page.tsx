@@ -224,15 +224,15 @@ export default function TeamsPage() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto p-8 bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 min-h-screen">
+    <div className="max-w-7xl mx-auto p-8 bg-linear-to-br from-purple-50 via-blue-50 to-pink-50 min-h-screen">
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
+        <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-purple-600 to-blue-600">
           Teams
         </h1>
         {auth.isAdmin && (
           <button
             onClick={() => setShowCreateModal(true)}
-            className="px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium hover:shadow-lg transition-all"
+            className="px-4 py-2 bg-linear-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium hover:shadow-lg transition-all"
           >
             + Create Team
           </button>
@@ -247,7 +247,7 @@ export default function TeamsPage() {
           {auth.isAdmin && (
             <button
               onClick={() => setShowCreateModal(true)}
-              className="mt-4 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium hover:shadow-lg transition-all"
+              className="mt-4 px-6 py-3 bg-linear-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium hover:shadow-lg transition-all"
             >
               Create Your First Team
             </button>
@@ -410,7 +410,7 @@ export default function TeamsPage() {
             <div className="flex gap-3 mt-6">
               <button
                 onClick={handleCreateTeam}
-                className="flex-1 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium hover:shadow-lg transition-all"
+                className="flex-1 px-4 py-2 bg-linear-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium hover:shadow-lg transition-all"
               >
                 Create Team
               </button>
@@ -481,7 +481,7 @@ export default function TeamsPage() {
             <div className="flex gap-3 mt-6">
               <button
                 onClick={handleAddMember}
-                className="flex-1 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium hover:shadow-lg transition-all"
+                className="flex-1 px-4 py-2 bg-linear-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium hover:shadow-lg transition-all"
               >
                 Add Member
               </button>

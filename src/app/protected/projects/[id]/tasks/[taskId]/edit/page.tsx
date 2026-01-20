@@ -128,7 +128,7 @@ export default function EditTaskPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen bg-linear-to-br from-purple-50 via-blue-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
           <Skeleton height={40} width={200} className="mb-6" />
           <div className="bg-white rounded-2xl shadow-xl p-8">
@@ -149,7 +149,7 @@ export default function EditTaskPage() {
 
   if (!task) {
     return (
-      <div className="flex items-center justify-center h-screen bg-gradient-to-br from-purple-50 to-blue-50">
+      <div className="flex items-center justify-center h-screen bg-linear-to-br from-purple-50 to-blue-50">
         <div className="text-center">
           <p className="text-red-600 mb-4">{error || 'Task not found'}</p>
           <button
@@ -164,7 +164,7 @@ export default function EditTaskPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-linear-to-br from-purple-50 via-blue-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         <div className="mb-6">
           <button

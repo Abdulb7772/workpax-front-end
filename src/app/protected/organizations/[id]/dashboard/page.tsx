@@ -64,7 +64,7 @@ export default function OrganizationDashboardPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 p-8">
+      <div className="min-h-screen bg-linear-to-br from-purple-50 via-blue-50 to-pink-50 p-8">
         <div className="max-w-7xl mx-auto">
           {/* Header Skeleton */}
           <div className="mb-8">
@@ -112,7 +112,7 @@ export default function OrganizationDashboardPage() {
 
   if (error) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50">
+      <div className="flex items-center justify-center min-h-screen bg-linear-to-br from-purple-50 via-blue-50 to-pink-50">
         <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md">
           <div className="text-red-500 text-center">
             <svg className="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -138,7 +138,7 @@ export default function OrganizationDashboardPage() {
   const totalMembers = organization?.members?.length || 0;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 p-4 sm:p-8">
+    <div className="min-h-screen bg-linear-to-br from-purple-50 via-blue-50 to-pink-50 p-4 sm:p-8">
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Header */}
         <div className="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-purple-600">
@@ -166,7 +166,7 @@ export default function OrganizationDashboardPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           
 
-          <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform">
+          <div className="bg-linear-to-br from-green-500 to-green-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-green-100 text-sm font-medium">Active Projects</p>
@@ -180,7 +180,7 @@ export default function OrganizationDashboardPage() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-yellow-500 to-orange-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform">
+          <div className="bg-linear-to-br from-yellow-500 to-orange-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-yellow-100 text-sm font-medium">Pending Projects</p>
@@ -194,7 +194,7 @@ export default function OrganizationDashboardPage() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform">
+          <div className="bg-linear-to-br from-purple-500 to-pink-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-purple-100 text-sm font-medium">Team Members</p>
@@ -223,7 +223,7 @@ export default function OrganizationDashboardPage() {
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
                   <div
-                    className="h-full bg-gradient-to-r from-green-500 to-green-600 rounded-full transition-all duration-500"
+                    className="h-full bg-linear-to-r from-green-500 to-green-600 rounded-full transition-all duration-500"
                     style={{ width: `${projects.length > 0 ? (activeProjects / projects.length) * 100 : 0}%` }}
                   ></div>
                 </div>
@@ -237,7 +237,7 @@ export default function OrganizationDashboardPage() {
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
                   <div
-                    className="h-full bg-gradient-to-r from-yellow-500 to-orange-600 rounded-full transition-all duration-500"
+                    className="h-full bg-linear-to-r from-yellow-500 to-orange-600 rounded-full transition-all duration-500"
                     style={{ width: `${projects.length > 0 ? (pendingProjects / projects.length) * 100 : 0}%` }}
                   ></div>
                 </div>
@@ -251,7 +251,7 @@ export default function OrganizationDashboardPage() {
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
                   <div
-                    className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full transition-all duration-500"
+                    className="h-full bg-linear-to-r from-blue-500 to-blue-600 rounded-full transition-all duration-500"
                     style={{ width: `${projects.length > 0 ? (completedProjects / projects.length) * 100 : 0}%` }}
                   ></div>
                 </div>

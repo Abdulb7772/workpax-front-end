@@ -8,10 +8,11 @@ interface TaskCardProps {
   task: Task;
   getPriorityColor: (priority: string) => string;
   getStatusBorderColor: (status: string) => string;
+  onClick?: (taskId: string) => void;
   onDoubleClick?: (taskId: string) => void;
 }
 
-export default function TaskCard({ task, getPriorityColor, getStatusBorderColor, onDoubleClick }: TaskCardProps) {
+export default function TaskCard({ task, getPriorityColor, getStatusBorderColor, onClick, onDoubleClick }: TaskCardProps) {
   const {
     attributes,
     listeners,
@@ -41,6 +42,10 @@ export default function TaskCard({ task, getPriorityColor, getStatusBorderColor,
       {...attributes}
       {...listeners}
       onClick={(e) => {
+        e.stopPropagation();
+        onClick?.(task._id);
+      }}
+      onDoubleClick={(e) => {
         e.stopPropagation();
         onDoubleClick?.(task._id);
       }}

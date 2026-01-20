@@ -3,7 +3,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 
 export default function Loading() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-400 via-blue-500 to-purple-600">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-r from-green-400 via-blue-500 to-purple-600">
       <div className="bg-white p-8 rounded-lg shadow-2xl w-full max-w-md">
         <div className="mb-8">
           <Skeleton height={32} width={200} className="mb-2" />

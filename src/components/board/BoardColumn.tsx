@@ -12,10 +12,11 @@ interface BoardColumnProps {
   tasks: Task[];
   getPriorityColor: (priority: string) => string;
   getStatusBorderColor: (status: string) => string;
+  onTaskClick?: (taskId: string) => void;
   onTaskDoubleClick?: (taskId: string) => void;
 }
 
-export default function BoardColumn({ id, title, color, tasks, getPriorityColor, getStatusBorderColor, onTaskDoubleClick }: BoardColumnProps) {
+export default function BoardColumn({ id, title, color, tasks, getPriorityColor, getStatusBorderColor, onTaskClick, onTaskDoubleClick }: BoardColumnProps) {
   const { setNodeRef, isOver } = useDroppable({
     id: id,
   });
@@ -49,6 +50,7 @@ export default function BoardColumn({ id, title, color, tasks, getPriorityColor,
                 task={task} 
                 getPriorityColor={getPriorityColor} 
                 getStatusBorderColor={getStatusBorderColor}
+                onClick={onTaskClick}
                 onDoubleClick={onTaskDoubleClick}
               />
             ))

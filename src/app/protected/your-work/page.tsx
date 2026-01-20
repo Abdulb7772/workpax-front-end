@@ -136,7 +136,7 @@ export default function YourWorkPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen bg-linear-to-br from-purple-50 via-blue-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <Skeleton height={40} width={250} className="mb-8" />
           
@@ -159,7 +159,7 @@ export default function YourWorkPage() {
   const completedTasks = getCompletedTasks();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-linear-to-br from-purple-50 via-blue-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -254,7 +254,7 @@ export default function YourWorkPage() {
               {activeTasks.map((task) => (
                 <div
                   key={task._id}
-                  className="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all bg-gradient-to-r from-white to-gray-50"
+                  className="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all bg-linear-to-r from-white to-gray-50"
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div 
@@ -347,7 +347,7 @@ export default function YourWorkPage() {
                 <div
                   key={task._id}
                   onClick={() => router.push(`/protected/projects/${task.project?._id}`)}
-                  className="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all cursor-pointer bg-gradient-to-r from-green-50 to-white opacity-90"
+                  className="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all cursor-pointer bg-linear-to-r from-green-50 to-white opacity-90"
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">

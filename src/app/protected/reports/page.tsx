@@ -144,9 +144,9 @@ export default function ReportsPage() {
       case 'todo':
         return 0.05; // 5% of task's share
       case 'backlog':
-        return 0; // 0% of task's share
+        return -0.3; // 0% of task's share
       case 'blocked':
-        return 0; // 0% of task's share
+        return -0.5; // 0% of task's share
       default:
         return 0;
     }
@@ -287,14 +287,14 @@ export default function ReportsPage() {
               <div key={index} className="flex items-center justify-between text-sm">
                 <div className="flex items-center gap-2 flex-1 min-w-0">
                   <div
-                    className="w-4 h-4 rounded flex-shrink-0"
+                    className="w-4 h-4 rounded shrink-0"
                     style={{ backgroundColor: taskColors[index % taskColors.length] }}
                   />
                   <span className="text-gray-700 font-medium truncate">
                     {task.title}
                   </span>
                 </div>
-                <div className="flex items-center gap-2 flex-shrink-0">
+                <div className="flex items-center gap-2 shrink-0">
                   <span className="text-xs px-2 py-1 bg-gray-100 rounded text-gray-600 capitalize">
                     {formatStatusLabel(task.status)}
                   </span>
@@ -312,7 +312,7 @@ export default function ReportsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 p-8">
+      <div className="min-h-screen bg-linear-to-br from-gray-50 via-blue-50 to-indigo-50 p-8">
         <div className="max-w-7xl mx-auto">
           <Skeleton height={40} width={200} className="mb-2" />
           <Skeleton height={20} width={300} className="mb-8" />
@@ -331,7 +331,7 @@ export default function ReportsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 p-8">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 via-blue-50 to-indigo-50 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -380,7 +380,7 @@ export default function ReportsPage() {
                   className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
                 >
                   {/* Project Header */}
-                  <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 text-white">
+                  <div className="bg-linear-to-r from-blue-600 to-indigo-600 p-6 text-white">
                     <h2 className="text-xl font-bold mb-1 truncate">
                       {project.name}
                     </h2>
