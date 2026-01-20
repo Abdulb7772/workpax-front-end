@@ -50,19 +50,19 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex flex-col relative font-sans overflow-hidden">
-      
+
       {/* 1. TOP SECTION: Image */}
       <div className="relative h-[58vh] w-full">
         {/* Background Image */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ 
+          style={{
             backgroundImage: 'url(/gamer.jpg)', // Ensure this path is correct
-            filter: 'brightness(01.0)' 
+            filter: 'brightness(01.0)'
           }}
         />
-        
-        
+
+
 
         {/* The Curve Divider */}
         {/* We place the SVG at the bottom of the top section, colored with the bottom section's gradient */}
@@ -71,35 +71,35 @@ export default function LoginPage() {
             {/* This path creates the "dip" effect */}
             <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="transparent" opacity="0"></path>
             {/* Simple Curved bottom */}
-             <path d="M0,30 C400,120 800,120 1200,30 L1200,120 L0,120 Z" fill="url(#bottomGradient)"></path>
-             <defs>
-               <linearGradient id="bottomGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="2%" stopColor="#ef4444" /> {/* Red */}
-                  <stop offset="50%" stopColor="#9333ea" /> {/* Purple */}
-                  <stop offset="100%" stopColor="#8b5cf6" /> {/* Violet */}
-               </linearGradient>
-             </defs>
+            <path d="M0,30 C400,120 800,120 1200,30 L1200,120 L0,120 Z" fill="url(#bottomGradient)"></path>
+            <defs>
+              <linearGradient id="bottomGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="2%" stopColor="#ef4444" /> {/* Red */}
+                <stop offset="50%" stopColor="#9333ea" /> {/* Purple */}
+                <stop offset="100%" stopColor="#8b5cf6" /> {/* Violet */}
+              </linearGradient>
+            </defs>
           </svg>
         </div>
       </div>
 
       {/* 2. BOTTOM SECTION: Gradient */}
       <div className="flex-1 bg-linear-to-r from-red-500 via-purple-600 to-violet-500 relative">
-         {/* This div just fills the remaining space */}
+        {/* This div just fills the remaining space */}
       </div>
 
       {/* 3. CENTERED CARD (Floating over both) */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md px-4 z-20 mt-10">
-        
+
         {/* The Blue/Cyan Glow Effect Behind the Card */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-blue-400/30 blur-[60px] rounded-full -z-10"></div>
 
         {/* The Glass Card */}
         <div className="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-2xl p-8 relative overflow-hidden">
-          
+
           {/* Inner Card Logo */}
           <div className="flex flex-col items-center mb-6">
-            
+
             <h1 className="text-center text-3xl font-bold text-white mt-1 drop-shadow-md">
               Welcome
             </h1>
@@ -145,8 +145,8 @@ export default function LoginPage() {
                 {/* Remember Me & Forgot Password */}
                 <div className="flex items-center justify-between mt-2">
                   <div className="flex items-center">
-                    
-                    
+
+
                   </div>
 
                   <div className="text-sm">
@@ -167,13 +167,13 @@ export default function LoginPage() {
                   </button>
                 </div>
                 <div>
-          <p className="mt-2 text-center text-sm text-gray-800">
-            Don't have an account?{' '}
-            <Link href="/signup" className="font-medium text-blue-900 hover:text-blue-500">
-              Sign up
-            </Link>
-          </p>
-        </div>
+                  <p className="mt-2 text-center text-sm text-gray-800">
+                    Don't have an account?{' '}
+                    <Link href="/signup" className="font-medium text-blue-900 hover:text-blue-500">
+                      Sign up
+                    </Link>
+                  </p>
+                </div>
               </Form>
             )}
           </Formik>
